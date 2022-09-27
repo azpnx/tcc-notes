@@ -19,7 +19,7 @@ jobs:
         distribution: 'adopt'
 
     - name: Publish to Registry
-      uses: ${{ secrets.DOCKER_USERNAME }}/tcc-notes@master
+      uses: gasbiru/tcc-notes@master
       with:
         name: vinodjayachandran/spring-boot-docker
         username: ${{ secrets.DOCKER_USERNAME }}
