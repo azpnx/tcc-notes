@@ -21,7 +21,10 @@ jobs:
       working-directory: ./
       run: mvn spring-boot:build-image -DskipTests
       
-    - name: Push to docker hub
+    - name: tag docker image
       run:
-        docker tag library/tcc-notes:0.0.1-SNAPSHOT ${{secrets.DOCKER_USERNAME}}/tcc-notes:${{github.run_id}}
+        docker tag gasbiru/tcc-notes:0.0.1-SNAPSHOT ${{secrets.DOCKER_USERNAME}}/tcc-notes:${{github.run_id}}
+      
+    - name : Push to docker
+      run:
         docker push ${{secrets.DOCKER_USERNAME}}/tcc-notes:${{github.run_id}}
