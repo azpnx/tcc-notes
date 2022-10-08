@@ -15,5 +15,6 @@ public class Nota {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     private Integer userId;
+    private Integer pacienteId;
     private String body;
 }

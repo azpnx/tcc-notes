@@ -3,8 +3,6 @@ package com.example.psinotes.controller;
 import com.example.psinotes.entity.Nota;
 import com.example.psinotes.service.NotesService;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
