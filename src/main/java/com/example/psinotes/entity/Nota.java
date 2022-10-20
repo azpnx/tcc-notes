@@ -2,10 +2,7 @@ package com.example.psinotes.entity;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @Data
@@ -14,7 +11,9 @@ public class Nota {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
-    private Integer userId;
-    private Integer pacienteId;
+    @Column(unique = true, length = 60)
+    private String profissionalId;
+    @Column(unique = true, length = 60)
+    private String pacienteId;
     private String body;
 }
