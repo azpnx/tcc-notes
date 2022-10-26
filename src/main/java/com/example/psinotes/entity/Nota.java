@@ -12,8 +12,8 @@ public class Nota {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     @Column(unique = true, length = 60)
-    private String profissionalId;
+    private String profissionalEmail;
     @Column(unique = true, length = 60)
-    private String pacienteId;
+    private String pacienteEmail;
     private String body;
 }

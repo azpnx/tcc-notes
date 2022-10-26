@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface NotesRepository extends JpaRepository<Nota, Long> {
-    List<Nota> findByUserId(Integer userId);
+    Nota findByPacienteEmail(String email);
 
     @Modifying
     @Query("update Nota n set n.body = ?1 where n.id = ?2")

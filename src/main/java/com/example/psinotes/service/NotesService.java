@@ -19,8 +19,8 @@ public class NotesService {
     public void save(Nota nota){
         repository.save(nota);
     }
-    public List<Nota> findByUserId(Integer userId){
-        return repository.findByUserId(userId);
+    public Nota findByPacienteEmail(String email){
+        return repository.findByPacienteEmail(email);
     }
 
     public void deleteById(Long id){
