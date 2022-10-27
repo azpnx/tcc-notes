@@ -17,7 +17,13 @@ public class NotesService {
     private NotesRepository repository;
 
     public void save(Nota nota){
-        repository.save(nota);
+        try {
+            Nota note = findByPacienteEmail(nota.getPacienteEmail());
+            note.setBody(nota.getBody());
+            repository.save(note);
+        }catch (Exception e){
+            repository.save(nota);
+        }
     }
     public Nota findByPacienteEmail(String email){
         return repository.findByPacienteEmail(email);
