@@ -16,7 +16,7 @@ public class NotesController {
 
     private NotesService notesService;
 
-    @PostMapping
+    @PutMapping
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<?> saveNote(@RequestBody Nota nota){
         notesService.save(nota);
