@@ -24,9 +24,11 @@ jobs:
     - name: tag docker image
       run:
         docker tag gasbiru/psi-notes:0.0.1-SNAPSHOT ${{secrets.DOCKER_USERNAME}}/psi-notes:${{github.run_id}}
+        
         docker tag gasbiru/psi-notes:0.0.1-SNAPSHOT ${{secrets.DOCKER_USERNAME}}/psi-notes:latest
       
     - name : Push to docker
       run:
         docker push ${{secrets.DOCKER_USERNAME}}/psi-notes:${{github.run_id}}
+        
         docker push ${{secrets.DOCKER_USERNAME}}/psi-notes:latest
