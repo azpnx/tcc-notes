@@ -25,8 +25,8 @@ public class NotesController {
 
     @GetMapping()
     @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity<Nota> findByUser(@RequestParam String email){
-        return ResponseEntity.ok(notesService.findByPacienteEmail(email));
+    public ResponseEntity<Nota> findByMeetId(@RequestParam Long meetId){
+        return ResponseEntity.ok(notesService.findByMeetId(meetId));
     }
 
     @DeleteMapping
