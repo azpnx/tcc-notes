@@ -1,5 +1,6 @@
 package com.example.psinotes.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -8,8 +9,8 @@ import javax.persistence.*;
 @Data
 public class Nota {
 
+    @JsonProperty("meet_id")
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     @Column(unique = true, length = 60)
     private String profissionalEmail;
