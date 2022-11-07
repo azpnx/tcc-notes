@@ -16,7 +16,7 @@ public class FeedBackController {
 
     @PutMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public ResponseEntity<?> saveFeedback(Feedback feedback){
+    public ResponseEntity<?> saveFeedback(@RequestBody Feedback feedback){
         service.save(feedback);
         return ResponseEntity.ok().build();
     }
