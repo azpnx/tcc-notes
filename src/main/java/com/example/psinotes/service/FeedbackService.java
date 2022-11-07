@@ -15,7 +15,7 @@ public class FeedbackService {
 
     public void save(Feedback feedback){
         try {
-            Feedback feedbackOld = findById(feedback.getProfessionalId());
+            Feedback feedbackOld = findByEmail(feedback.getProfessionalId());
             feedbackOld.setBody(feedbackOld.getBody());
             repository.save(feedbackOld);
         }catch (Exception e){
@@ -23,7 +23,7 @@ public class FeedbackService {
         }
     }
 
-    public Feedback findById(String email){
-        return repository.findById(email).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Feedback não encontrado"));
+    public Feedback findByEmail(String email){
+        return repository.findByProfessionalId(email).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Feedback não encontrado"));
     }
 }

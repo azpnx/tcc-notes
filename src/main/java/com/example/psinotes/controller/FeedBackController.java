@@ -23,7 +23,7 @@ public class FeedBackController {
 
     @GetMapping
     public ResponseEntity<Feedback> getFeedback(@RequestParam String professionalEmail){
-        Feedback feedback = service.findById(professionalEmail);
+        Feedback feedback = service.findByEmail(professionalEmail);
         return ResponseEntity.ok(feedback);
     }
 }
