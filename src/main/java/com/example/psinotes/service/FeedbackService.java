@@ -16,7 +16,7 @@ public class FeedbackService {
     public void save(Feedback feedback){
         try {
             Feedback feedbackOld = findByEmail(feedback.getProfessionalId());
-            feedbackOld.setBody(feedbackOld.getBody());
+            feedbackOld.setBody(feedback.getBody());
             repository.save(feedbackOld);
         }catch (Exception e){
             repository.save(feedback);
